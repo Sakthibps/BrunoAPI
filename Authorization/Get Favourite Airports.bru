@@ -11,5 +11,9 @@ get {
 }
 
 auth:bearer {
-  token: {{tokenValue}}
+  token: 
+}
+
+script:pre-request {
+  req.setHeader("Authorization", "Bearer {{tokenValue}}")
 }
