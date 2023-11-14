@@ -1,0 +1,35 @@
+meta {
+  name: Generate Bearer Token
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://airportgap.com/api/tokens
+  body: json
+  auth: none
+}
+
+body:json {
+   {
+      "email": "{{emailValue}}",
+      "password": "{{passwordValue}}"
+    }
+  
+}
+
+vars:pre-request {
+  emailValue: cyrilgeorge153@gmail.com
+  passwordValue: password
+}
+
+vars:post-response {
+  tokenValue: res.body.token
+}
+
+script:post-response {
+  
+  
+  
+  
+}

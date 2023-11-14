@@ -1,0 +1,22 @@
+meta {
+  name: Update User
+  type: http
+  seq: 3
+}
+
+put {
+  url: https://reqres.in/api/users/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "name": "morpheus",
+      "job": "zion resident"
+  }
+}
+
+assert {
+  res.status: eq 200
+}
