@@ -10,9 +10,16 @@ post {
   auth: none
 }
 
+body:json {
+  {
+    "email": "cyrilgeorge153@gmail.com",
+    "password": "{{passwordEnvValue}}"
+  }
+}
+
 vars:pre-request {
   emailValue: cyrilgeorge153@gmail.com
-  passwordValue: password
+  passwordValue: {{process.env.PASSWORD}}
 }
 
 vars:post-response {
@@ -20,10 +27,11 @@ vars:post-response {
 }
 
 script:pre-request {
-  req.setBody({
-    "email": "{{emailValue}}",
-    "password": "{{passwordValue}}"
-  })
+  // req.setBody({
+  //   "email": "{{emailValue}}",
+  //   "password": "{{passwordValue}}"
+  // })
+  
 }
 
 script:post-response {
