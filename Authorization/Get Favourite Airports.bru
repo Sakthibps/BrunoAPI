@@ -15,5 +15,5 @@ auth:bearer {
 }
 
 script:pre-request {
-  req.setHeader("Authorization", "Bearer {{tokenValue}}")
+  req.setHeader("Authorization", "Bearer {{tokenValue}}");
 }

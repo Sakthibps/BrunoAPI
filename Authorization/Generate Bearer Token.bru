@@ -35,7 +35,7 @@ script:pre-request {
 }
 
 script:post-response {
-  bru.setVar("tokenValue", res.body.token)
+  bru.setVar("tokenValue", res.body.token);
   
   
   
