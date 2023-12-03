@@ -26,6 +26,10 @@ vars:post-response {
   ~tokenValue: res.body.token
 }
 
+assert {
+  res.responseTime: lte 2000
+}
+
 script:pre-request {
   // req.setBody({
   //   "email": "{{emailValue}}",
@@ -39,4 +43,10 @@ script:post-response {
   
   
   
+}
+
+tests {
+  test("response time test", function() {
+    expect(res.getResponseTime()).to.lte(2000);
+  });
 }
