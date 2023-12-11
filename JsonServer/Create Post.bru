@@ -11,8 +11,16 @@ post {
 }
 
 body:json {
-   {
-      "title": "json-server1",
-      "author": "typicode1"
-    }
+  {
+      "title": "json-server",
+      "author": "typicode"
+  }
+}
+
+vars:post-response {
+  postIdValue: res.body.id
+}
+
+script:post-response {
+  bru.setNextRequest("Update Created Post");
 }
