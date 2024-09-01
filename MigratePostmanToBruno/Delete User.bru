@@ -1,0 +1,17 @@
+meta {
+  name: Delete User
+  type: http
+  seq: 5
+}
+
+delete {
+  url: https://reqres.in/api/users/2
+  body: none
+  auth: none
+}
+
+tests {
+  test("Response status code is 204", function () {
+      expect(res.getStatus()).to.equal(204);
+  });
+}

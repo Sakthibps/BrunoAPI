@@ -1,0 +1,24 @@
+meta {
+  name: Update User Details Partialy
+  type: http
+  seq: 4
+}
+
+patch {
+  url: https://reqres.in/api/users/2
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "name": "morpheus",
+      "job": "tester"
+  }
+}
+
+tests {
+  test("Response status code is 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+}
