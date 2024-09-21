@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "VariableTypes",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

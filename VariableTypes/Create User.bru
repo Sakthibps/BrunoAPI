@@ -1,0 +1,27 @@
+meta {
+  name: Create User
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://reqres.in/api/users
+  body: json
+  auth: none
+}
+
+headers {
+  header1: headerValue
+}
+
+body:json {
+  {
+      "name": "{{nameValue}}",
+      "job": "leader"
+  }
+}
+
+script:pre-request {
+  let name = bru.getCollectionVar("nameValue");
+  let headerValue = bru.getCollectionVar("firstheader");
+}
