@@ -1,0 +1,21 @@
+meta {
+  name: API Key Authentication Direct
+  type: http
+  seq: 9
+}
+
+get {
+  url: https://api.openweathermap.org/data/2.5/weather?q=Kochi
+  body: none
+  auth: apikey
+}
+
+params:query {
+  q: Kochi
+}
+
+auth:apikey {
+  key: appid
+  value: {{apiKey}}
+  placement: queryparams
+}
