@@ -1,0 +1,22 @@
+meta {
+  name: CreateUserUsingJSONFile
+  type: http
+  seq: 3
+}
+
+post {
+  url: https://reqres.in/api/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "name": "{{nameValue}}",
+      "job": "{{jobValue}}"
+  }
+}
+
+assert {
+  res.status: eq 201
+}
