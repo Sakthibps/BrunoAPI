@@ -1,0 +1,70 @@
+meta {
+  name: Create User Json Schema Assertion
+  type: http
+  seq: 10
+}
+
+post {
+  url: https://reqres.in/api/users
+  body: json
+  auth: none
+}
+
+auth:basic {
+  username: 
+  password: 
+}
+
+auth:bearer {
+  token: 
+}
+
+body:json {
+  {
+      "name": "morpheus",
+      "job": "leader"
+  }
+}
+
+tests {
+  const Ajv = require('ajv');
+  const ajv = new Ajv();
+  
+  const schema = {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "job": {
+        "type": "string"
+      },
+      "id": {
+        "type": "string"
+      },
+      "createdAt": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "name",
+      "job",
+      "id",
+      "createdAt"
+    ]
+  }
+  
+  test("Verify JSON returns the right schema", function() {
+  const data = res.getBody();
+  const valid = ajv.validate(schema, data);
+  //expect(res.getStatus()).to.equal(200);
+  expect(valid).to.be.true;
+  if (!valid) console.log(ajv.errors);
+  });
+  
+  
+  
+  
+  
+}
