@@ -1,0 +1,27 @@
+meta {
+  name: GetCountryDetails
+  type: graphql
+  seq: 2
+}
+
+post {
+  url: https://countries.trevorblades.com/
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query GetCountry {
+    country(code: "IN") {
+      name
+      native
+      capital
+      emoji
+      currency
+      languages {
+        code
+        name
+      }
+    }
+  }
+}
