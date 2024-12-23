@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "GraphQLServer",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
