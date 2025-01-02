@@ -1,0 +1,31 @@
+meta {
+  name: UpdateCreatedPost
+  type: graphql
+  seq: 4
+}
+
+post {
+  url: http://localhost:3000/
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  mutation UpdatePost($id: ID!, $title: String, $views: Int, $user_id: ID!) {
+    updatePost(id: $id, title: $title, views: $views, user_id: $user_id) {
+      id
+      title
+      views
+      user_id
+    }
+  }
+}
+
+body:graphql:vars {
+  {
+    "id":"{{idValue}}",
+    "title":"title2",
+    "views":1000,
+    "user_id":101
+  }
+}

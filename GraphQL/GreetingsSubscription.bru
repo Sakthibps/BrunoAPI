@@ -1,0 +1,17 @@
+meta {
+  name: GreetingsSubscription
+  type: graphql
+  seq: 3
+}
+
+post {
+  url: https://graphql.postman-echo.com/graphql
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  subscription Greetings{
+    greetings
+  }
+}

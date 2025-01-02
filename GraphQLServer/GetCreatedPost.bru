@@ -1,0 +1,29 @@
+meta {
+  name: GetCreatedPost
+  type: graphql
+  seq: 3
+}
+
+post {
+  url: http://localhost:3000/
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  query GetCreatedPost($id: ID!) {
+    Post(id: $id) {
+      id
+      title
+      views
+      user_id
+    }
+  }
+}
+
+body:graphql:vars {
+  {
+    "id": "{{idValue}}"
+  }
+  
+}

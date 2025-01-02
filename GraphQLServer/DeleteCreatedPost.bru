@@ -1,0 +1,28 @@
+meta {
+  name: DeleteCreatedPost
+  type: graphql
+  seq: 5
+}
+
+post {
+  url: http://localhost:3000/
+  body: graphql
+  auth: none
+}
+
+body:graphql {
+  mutation DeletePost($id: ID!){
+    removePost(id: $id) {
+      id
+      title
+      views
+      user_id
+    }
+  }
+}
+
+body:graphql:vars {
+  {
+    "id":"{{idValue}}"
+  }
+}
