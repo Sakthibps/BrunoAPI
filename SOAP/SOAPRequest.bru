@@ -1,0 +1,25 @@
+meta {
+  name: SOAPRequest
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://www.w3schools.com/xml/tempconvert.asmx
+  body: xml
+  auth: none
+}
+
+headers {
+  content-type: text/xml
+}
+
+body:xml {
+  <soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+    <soap12:Body>
+      <FahrenheitToCelsius xmlns="https://www.w3schools.com/xml/">
+        <Fahrenheit>80</Fahrenheit>
+      </FahrenheitToCelsius>
+    </soap12:Body>
+  </soap12:Envelope>
+}

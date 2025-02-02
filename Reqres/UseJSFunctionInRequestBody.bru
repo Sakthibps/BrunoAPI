@@ -1,0 +1,26 @@
+meta {
+  name: UseJSFunctionInRequestBody
+  type: http
+  seq: 11
+}
+
+post {
+  url: https://reqres.in/api/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "name": "{{dateValue}}",
+      "job": "leader"
+  }
+}
+
+script:pre-request {
+  function getCurrentDate() {
+    const currentDate = new Date();
+    return currentDate.toLocaleDateString(); 
+  }
+  bru.setVar("dateValue", getCurrentDate());
+}
