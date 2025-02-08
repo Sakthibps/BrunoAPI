@@ -1,0 +1,19 @@
+meta {
+  name: Get All Users
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://reqres.in/api/users?page=2
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 2
+}
+
+docs {
+  # Request Level Documentation
+}
