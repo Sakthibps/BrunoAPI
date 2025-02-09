@@ -1,0 +1,41 @@
+meta {
+  name: Create User
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://reqres.in/api/users
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+      "name": "{{nameValue}}",
+      "job": "leader"
+  }
+}
+
+vars:pre-request {
+  requesvar1: requesvar1value
+  var2: var2value
+}
+
+script:pre-request {
+  // let name = bru.getCollectionVar("nameValue");
+  // console.log(name);
+  // let environmentName = bru.getEnvName();
+  // console.log(environmentName);
+  // let baseUrlValue = bru.getEnvVar("baseUrl");
+  // console.log(baseUrlValue);
+  // let folderVariableValue = bru.getFolderVar("foldervariable1");
+  // console.log(folderVariableValue);
+  // let globalVariableValue=bru.getGlobalEnvVar("baseUrl");
+  // console.log(globalVariableValue);
+  // let requestVarValue=bru.getRequestVar("requesvar1");
+  // console.log(requestVarValue); 
+  let processVarValue = bru.getProcessEnv("API_KEY");
+  console.log(processVarValue);
+  
+}
