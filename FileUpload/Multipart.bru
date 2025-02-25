@@ -1,0 +1,15 @@
+meta {
+  name: Multipart
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://postman-echo.com/post
+  body: multipartForm
+  auth: none
+}
+
+body:multipart-form {
+  file: @file(download.jpg)
+}

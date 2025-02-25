@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "EnvGlobalVarsviaScripting",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}

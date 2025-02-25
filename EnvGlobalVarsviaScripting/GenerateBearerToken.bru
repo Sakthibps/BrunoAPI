@@ -1,0 +1,23 @@
+meta {
+  name: GenerateBearerToken
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://airportgap.com/api/tokens
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "email": "cyrilgeorge153@gmail.com",
+    "password": "{{passwordEnvValue}}"
+  }
+}
+
+script:post-response {
+  // bru.setGlobalEnvVar("globalToken", res.getBody().token);
+  bru.setEnvVar("envToken",res.getBody().token);
+}
