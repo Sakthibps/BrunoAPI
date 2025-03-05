@@ -1,0 +1,38 @@
+name: Run Bruno Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  bruno-test:
+    name: Run Bruno CLI Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Adjust Node version as needed
+
+      # Install Bruno CLI dependencies
+      - name: Install Dependencies
+        run: |
+          npm install
+
+      # Run Bruno CLI tests with HTML reporting
+      - name: Run Bruno Tests
+        run: |
+          cd HTMLReporter
+          npx @usebruno/cli run --reporter-html /reports/Results.html
+
+     
