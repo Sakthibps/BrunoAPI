@@ -28,7 +28,7 @@ jobs:
       - name: Run Bruno Tests
         run: |
           cd HTMLReporter
-          npx @usebruno/cli run --reporter-html ./reports/Results.html
+          npx @usebruno/cli run --reporter-html Results.html
 
       # Upload the test report as an artifact
       - name: Upload Test Report
@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: Bruno Test Results
-          path: ./reports/Results.html
+          path: Results.html
 
       # (Optional) Post-run: Summary output
       - name: Display Test Run Summary
