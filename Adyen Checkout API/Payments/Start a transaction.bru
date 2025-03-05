@@ -1,0 +1,380 @@
+meta {
+  name: Start a transaction
+  type: http
+  seq: 4
+}
+
+post {
+  url: {{baseUrl}}/payments
+  body: json
+  auth: basic
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "accountInfo": {
+      "accountAgeIndicator": "",
+      "accountChangeDate": "",
+      "accountChangeIndicator": "",
+      "accountCreationDate": "",
+      "accountType": "",
+      "addCardAttemptsDay": "",
+      "deliveryAddressUsageDate": "",
+      "deliveryAddressUsageIndicator": "",
+      "homePhone": "",
+      "mobilePhone": "",
+      "passwordChangeDate": "",
+      "passwordChangeIndicator": "",
+      "pastTransactionsDay": "",
+      "pastTransactionsYear": "",
+      "paymentAccountAge": "",
+      "paymentAccountIndicator": "",
+      "purchasesLast6Months": "",
+      "suspiciousActivity": "",
+      "workPhone": ""
+    },
+    "additionalAmount": {
+      "currency": "",
+      "value": ""
+    },
+    "additionalData": {},
+    "amount": {
+      "currency": "",
+      "value": ""
+    },
+    "applicationInfo": {
+      "adyenLibrary": {
+        "name": "",
+        "version": ""
+      },
+      "adyenPaymentSource": {
+        "name": "",
+        "version": ""
+      },
+      "externalPlatform": {
+        "integrator": "",
+        "name": "",
+        "version": ""
+      },
+      "merchantApplication": {
+        "name": "",
+        "version": ""
+      },
+      "merchantDevice": {
+        "os": "",
+        "osVersion": "",
+        "reference": ""
+      },
+      "shopperInteractionDevice": {
+        "locale": "",
+        "os": "",
+        "osVersion": ""
+      }
+    },
+    "authenticationData": {
+      "attemptAuthentication": "",
+      "authenticationOnly": "",
+      "threeDSRequestData": {
+        "challengeWindowSize": "",
+        "dataOnly": "",
+        "nativeThreeDS": "",
+        "threeDSVersion": ""
+      }
+    },
+    "billingAddress": {
+      "city": "",
+      "country": "",
+      "houseNumberOrName": "",
+      "postalCode": "",
+      "stateOrProvince": "",
+      "street": ""
+    },
+    "browserInfo": {
+      "acceptHeader": "",
+      "colorDepth": "",
+      "javaEnabled": "",
+      "javaScriptEnabled": "",
+      "language": "",
+      "screenHeight": "",
+      "screenWidth": "",
+      "timeZoneOffset": "",
+      "userAgent": ""
+    },
+    "captureDelayHours": "",
+    "channel": "",
+    "checkoutAttemptId": "",
+    "company": {
+      "homepage": "",
+      "name": "",
+      "registrationNumber": "",
+      "registryLocation": "",
+      "taxId": "",
+      "type": ""
+    },
+    "conversionId": "",
+    "countryCode": "",
+    "dateOfBirth": "",
+    "dccQuote": {
+      "account": "",
+      "accountType": "",
+      "baseAmount": {
+        "currency": "",
+        "value": ""
+      },
+      "basePoints": "",
+      "buy": {
+        "currency": "",
+        "value": ""
+      },
+      "interbank": {
+        "currency": "",
+        "value": ""
+      },
+      "reference": "",
+      "sell": {
+        "currency": "",
+        "value": ""
+      },
+      "signature": "",
+      "source": "",
+      "type": "",
+      "validTill": ""
+    },
+    "deliveryAddress": {
+      "city": "",
+      "country": "",
+      "houseNumberOrName": "",
+      "postalCode": "",
+      "stateOrProvince": "",
+      "street": ""
+    },
+    "deliveryDate": "",
+    "deviceFingerprint": "",
+    "enableOneClick": "",
+    "enablePayOut": "",
+    "enableRecurring": "",
+    "entityType": "",
+    "fraudOffset": "",
+    "industryUsage": "",
+    "installments": {
+      "plan": "",
+      "value": ""
+    },
+    "lineItems": [
+      {
+        "amountExcludingTax": "",
+        "amountIncludingTax": "",
+        "brand": "",
+        "color": "",
+        "description": "",
+        "id": "",
+        "imageUrl": "",
+        "itemCategory": "",
+        "manufacturer": "",
+        "productUrl": "",
+        "quantity": "",
+        "receiverEmail": "",
+        "size": "",
+        "sku": "",
+        "taxAmount": "",
+        "taxPercentage": "",
+        "upc": ""
+      }
+    ],
+    "localizedShopperStatement": {},
+    "mandate": {
+      "amount": "",
+      "amountRule": "",
+      "billingAttemptsRule": "",
+      "billingDay": "",
+      "endsAt": "",
+      "frequency": "",
+      "remarks": "",
+      "startsAt": ""
+    },
+    "mcc": "",
+    "merchantAccount": "",
+    "merchantOrderReference": "",
+    "merchantRiskIndicator": {
+      "addressMatch": "",
+      "deliveryAddressIndicator": "",
+      "deliveryEmail": "",
+      "deliveryEmailAddress": "",
+      "deliveryTimeframe": "",
+      "giftCardAmount": {
+        "currency": "",
+        "value": ""
+      },
+      "giftCardCount": "",
+      "giftCardCurr": "",
+      "preOrderDate": "",
+      "preOrderPurchase": "",
+      "preOrderPurchaseInd": "",
+      "reorderItems": "",
+      "reorderItemsInd": "",
+      "shipIndicator": ""
+    },
+    "metadata": {},
+    "mpiData": {
+      "authenticationResponse": "",
+      "cavv": "",
+      "cavvAlgorithm": "",
+      "challengeCancel": "",
+      "directoryResponse": "",
+      "dsTransID": "",
+      "eci": "",
+      "riskScore": "",
+      "threeDSVersion": "",
+      "tokenAuthenticationVerificationValue": "",
+      "transStatusReason": "",
+      "xid": ""
+    },
+    "order": {
+      "orderData": "",
+      "pspReference": ""
+    },
+    "orderReference": "",
+    "origin": "",
+    "paymentMethod": "",
+    "platformChargebackLogic": {
+      "behavior": "",
+      "costAllocationAccount": "",
+      "targetAccount": ""
+    },
+    "recurringExpiry": "",
+    "recurringFrequency": "",
+    "recurringProcessingModel": "",
+    "redirectFromIssuerMethod": "",
+    "redirectToIssuerMethod": "",
+    "reference": "",
+    "returnUrl": "",
+    "riskData": {
+      "clientData": "",
+      "customFields": {},
+      "fraudOffset": "",
+      "profileReference": ""
+    },
+    "sessionValidity": "",
+    "shopperEmail": "",
+    "shopperIP": "",
+    "shopperInteraction": "",
+    "shopperLocale": "",
+    "shopperName": {
+      "firstName": "",
+      "lastName": ""
+    },
+    "shopperReference": "",
+    "shopperStatement": "",
+    "socialSecurityNumber": "",
+    "splits": [
+      {
+        "account": "",
+        "amount": {
+          "currency": "",
+          "value": ""
+        },
+        "description": "",
+        "reference": "",
+        "type": ""
+      }
+    ],
+    "store": "",
+    "storePaymentMethod": "",
+    "telephoneNumber": "",
+    "threeDS2RequestData": {
+      "acctInfo": {
+        "chAccAgeInd": "",
+        "chAccChange": "",
+        "chAccChangeInd": "",
+        "chAccPwChange": "",
+        "chAccPwChangeInd": "",
+        "chAccString": "",
+        "nbPurchaseAccount": "",
+        "paymentAccAge": "",
+        "paymentAccInd": "",
+        "provisionAttemptsDay": "",
+        "shipAddressUsage": "",
+        "shipAddressUsageInd": "",
+        "shipNameIndicator": "",
+        "suspiciousAccActivity": "",
+        "txnActivityDay": "",
+        "txnActivityYear": ""
+      },
+      "acctType": "",
+      "acquirerBIN": "",
+      "acquirerMerchantID": "",
+      "addrMatch": "",
+      "authenticationOnly": "",
+      "challengeIndicator": "",
+      "deviceChannel": "",
+      "deviceRenderOptions": {
+        "sdkInterface": "",
+        "sdkUiType": []
+      },
+      "homePhone": {
+        "cc": "",
+        "subscriber": ""
+      },
+      "mcc": "",
+      "merchantName": "",
+      "messageVersion": "",
+      "mobilePhone": {
+        "cc": "",
+        "subscriber": ""
+      },
+      "notificationURL": "",
+      "payTokenInd": "",
+      "paymentAuthenticationUseCase": "",
+      "purchaseInstalData": "",
+      "recurringExpiry": "",
+      "recurringFrequency": "",
+      "sdkAppID": "",
+      "sdkEncData": "",
+      "sdkEphemPubKey": {
+        "crv": "",
+        "kty": "",
+        "x": "",
+        "y": ""
+      },
+      "sdkMaxTimeout": "",
+      "sdkReferenceNumber": "",
+      "sdkTransID": "",
+      "sdkVersion": "",
+      "threeDSCompInd": "",
+      "threeDSRequestorAuthenticationInd": "",
+      "threeDSRequestorAuthenticationInfo": {
+        "threeDSReqAuthData": "",
+        "threeDSReqAuthMethod": "",
+        "threeDSReqAuthTimestamp": ""
+      },
+      "threeDSRequestorChallengeInd": "",
+      "threeDSRequestorID": "",
+      "threeDSRequestorName": "",
+      "threeDSRequestorPriorAuthenticationInfo": {
+        "threeDSReqPriorAuthData": "",
+        "threeDSReqPriorAuthMethod": "",
+        "threeDSReqPriorAuthTimestamp": "",
+        "threeDSReqPriorRef": ""
+      },
+      "threeDSRequestorURL": "",
+      "transType": "",
+      "transactionType": "",
+      "whiteListStatus": "",
+      "workPhone": {
+        "cc": "",
+        "subscriber": ""
+      }
+    },
+    "threeDSAuthenticationOnly": "",
+    "trustedShopper": ""
+  }
+}

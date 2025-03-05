@@ -1,0 +1,230 @@
+meta {
+  name: Create a payment session
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/paymentSession
+  body: json
+  auth: basic
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "additionalAmount": {
+      "currency": "",
+      "value": ""
+    },
+    "additionalData": {},
+    "allowedPaymentMethods": [],
+    "amount": {
+      "currency": "",
+      "value": ""
+    },
+    "applicationInfo": {
+      "adyenLibrary": {
+        "name": "",
+        "version": ""
+      },
+      "adyenPaymentSource": {
+        "name": "",
+        "version": ""
+      },
+      "externalPlatform": {
+        "integrator": "",
+        "name": "",
+        "version": ""
+      },
+      "merchantApplication": {
+        "name": "",
+        "version": ""
+      },
+      "merchantDevice": {
+        "os": "",
+        "osVersion": "",
+        "reference": ""
+      },
+      "shopperInteractionDevice": {
+        "locale": "",
+        "os": "",
+        "osVersion": ""
+      }
+    },
+    "billingAddress": {
+      "city": "",
+      "country": "",
+      "houseNumberOrName": "",
+      "postalCode": "",
+      "stateOrProvince": "",
+      "street": ""
+    },
+    "blockedPaymentMethods": [],
+    "captureDelayHours": "",
+    "channel": "",
+    "checkoutAttemptId": "",
+    "company": {
+      "homepage": "",
+      "name": "",
+      "registrationNumber": "",
+      "registryLocation": "",
+      "taxId": "",
+      "type": ""
+    },
+    "configuration": {
+      "avs": {
+        "addressEditable": "",
+        "enabled": ""
+      },
+      "cardHolderName": "",
+      "installments": {
+        "maxNumberOfInstallments": ""
+      },
+      "shopperInput": {
+        "billingAddress": "",
+        "deliveryAddress": "",
+        "personalDetails": ""
+      }
+    },
+    "conversionId": "",
+    "countryCode": "",
+    "dateOfBirth": "",
+    "dccQuote": {
+      "account": "",
+      "accountType": "",
+      "baseAmount": {
+        "currency": "",
+        "value": ""
+      },
+      "basePoints": "",
+      "buy": {
+        "currency": "",
+        "value": ""
+      },
+      "interbank": {
+        "currency": "",
+        "value": ""
+      },
+      "reference": "",
+      "sell": {
+        "currency": "",
+        "value": ""
+      },
+      "signature": "",
+      "source": "",
+      "type": "",
+      "validTill": ""
+    },
+    "deliveryAddress": {
+      "city": "",
+      "country": "",
+      "houseNumberOrName": "",
+      "postalCode": "",
+      "stateOrProvince": "",
+      "street": ""
+    },
+    "deliveryDate": "",
+    "enableOneClick": "",
+    "enablePayOut": "",
+    "enableRecurring": "",
+    "entityType": "",
+    "fraudOffset": "",
+    "installments": {
+      "plan": "",
+      "value": ""
+    },
+    "lineItems": [
+      {
+        "amountExcludingTax": "",
+        "amountIncludingTax": "",
+        "brand": "",
+        "color": "",
+        "description": "",
+        "id": "",
+        "imageUrl": "",
+        "itemCategory": "",
+        "manufacturer": "",
+        "productUrl": "",
+        "quantity": "",
+        "receiverEmail": "",
+        "size": "",
+        "sku": "",
+        "taxAmount": "",
+        "taxPercentage": "",
+        "upc": ""
+      }
+    ],
+    "localizedShopperStatement": {},
+    "mandate": {
+      "amount": "",
+      "amountRule": "",
+      "billingAttemptsRule": "",
+      "billingDay": "",
+      "endsAt": "",
+      "frequency": "",
+      "remarks": "",
+      "startsAt": ""
+    },
+    "mcc": "",
+    "merchantAccount": "",
+    "merchantOrderReference": "",
+    "metadata": {},
+    "orderReference": "",
+    "origin": "",
+    "platformChargebackLogic": {
+      "behavior": "",
+      "costAllocationAccount": "",
+      "targetAccount": ""
+    },
+    "recurringExpiry": "",
+    "recurringFrequency": "",
+    "reference": "",
+    "returnUrl": "",
+    "riskData": {
+      "clientData": "",
+      "customFields": {},
+      "fraudOffset": "",
+      "profileReference": ""
+    },
+    "sdkVersion": "",
+    "sessionValidity": "",
+    "shopperEmail": "",
+    "shopperIP": "",
+    "shopperInteraction": "",
+    "shopperLocale": "",
+    "shopperName": {
+      "firstName": "",
+      "lastName": ""
+    },
+    "shopperReference": "",
+    "shopperStatement": "",
+    "socialSecurityNumber": "",
+    "splits": [
+      {
+        "account": "",
+        "amount": {
+          "currency": "",
+          "value": ""
+        },
+        "description": "",
+        "reference": "",
+        "type": ""
+      }
+    ],
+    "store": "",
+    "storePaymentMethod": "",
+    "telephoneNumber": "",
+    "threeDSAuthenticationOnly": "",
+    "token": "",
+    "trustedShopper": ""
+  }
+}

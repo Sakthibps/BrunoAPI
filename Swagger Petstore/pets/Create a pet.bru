@@ -1,0 +1,19 @@
+meta {
+  name: Create a pet
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/pets
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id": "",
+    "name": "",
+    "tag": ""
+  }
+}

@@ -1,0 +1,30 @@
+meta {
+  name: Get the list of brands on the card
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/cardDetails
+  body: json
+  auth: basic
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "cardNumber": "",
+    "countryCode": "",
+    "encryptedCardNumber": "",
+    "merchantAccount": "",
+    "supportedBrands": []
+  }
+}

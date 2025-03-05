@@ -1,0 +1,30 @@
+meta {
+  name: Cancel an order
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/orders/cancel
+  body: json
+  auth: basic
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "merchantAccount": "",
+    "order": {
+      "orderData": "",
+      "pspReference": ""
+    }
+  }
+}

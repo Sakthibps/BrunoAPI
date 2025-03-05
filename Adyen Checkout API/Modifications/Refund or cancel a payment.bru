@@ -1,0 +1,31 @@
+meta {
+  name: Refund or cancel a payment
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/payments/:paymentPspReference/reversals
+  body: json
+  auth: basic
+}
+
+params:path {
+  paymentPspReference: 
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "merchantAccount": "",
+    "reference": ""
+  }
+}

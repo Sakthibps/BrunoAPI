@@ -1,0 +1,26 @@
+meta {
+  name: Update the status of a payment link
+  type: http
+  seq: 3
+}
+
+patch {
+  url: {{baseUrl}}/paymentLinks/:linkId
+  body: json
+  auth: basic
+}
+
+params:path {
+  linkId: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "status": ""
+  }
+}

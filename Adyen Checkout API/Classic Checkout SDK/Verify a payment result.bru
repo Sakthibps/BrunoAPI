@@ -1,0 +1,26 @@
+meta {
+  name: Verify a payment result
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/payments/result
+  body: json
+  auth: basic
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "payload": ""
+  }
+}

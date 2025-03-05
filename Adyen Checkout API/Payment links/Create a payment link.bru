@@ -1,0 +1,147 @@
+meta {
+  name: Create a payment link
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/paymentLinks
+  body: json
+  auth: basic
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "allowedPaymentMethods": [],
+    "amount": {
+      "currency": "",
+      "value": ""
+    },
+    "applicationInfo": {
+      "adyenLibrary": {
+        "name": "",
+        "version": ""
+      },
+      "adyenPaymentSource": {
+        "name": "",
+        "version": ""
+      },
+      "externalPlatform": {
+        "integrator": "",
+        "name": "",
+        "version": ""
+      },
+      "merchantApplication": {
+        "name": "",
+        "version": ""
+      },
+      "merchantDevice": {
+        "os": "",
+        "osVersion": "",
+        "reference": ""
+      },
+      "shopperInteractionDevice": {
+        "locale": "",
+        "os": "",
+        "osVersion": ""
+      }
+    },
+    "billingAddress": {
+      "city": "",
+      "country": "",
+      "houseNumberOrName": "",
+      "postalCode": "",
+      "stateOrProvince": "",
+      "street": ""
+    },
+    "blockedPaymentMethods": [],
+    "captureDelayHours": "",
+    "countryCode": "",
+    "dateOfBirth": "",
+    "deliverAt": "",
+    "deliveryAddress": {
+      "city": "",
+      "country": "",
+      "houseNumberOrName": "",
+      "postalCode": "",
+      "stateOrProvince": "",
+      "street": ""
+    },
+    "description": "",
+    "expiresAt": "",
+    "installmentOptions": {},
+    "lineItems": [
+      {
+        "amountExcludingTax": "",
+        "amountIncludingTax": "",
+        "brand": "",
+        "color": "",
+        "description": "",
+        "id": "",
+        "imageUrl": "",
+        "itemCategory": "",
+        "manufacturer": "",
+        "productUrl": "",
+        "quantity": "",
+        "receiverEmail": "",
+        "size": "",
+        "sku": "",
+        "taxAmount": "",
+        "taxPercentage": "",
+        "upc": ""
+      }
+    ],
+    "manualCapture": "",
+    "mcc": "",
+    "merchantAccount": "",
+    "merchantOrderReference": "",
+    "metadata": {},
+    "recurringProcessingModel": "",
+    "reference": "",
+    "requiredShopperFields": [],
+    "returnUrl": "",
+    "reusable": "",
+    "riskData": {
+      "clientData": "",
+      "customFields": {},
+      "fraudOffset": "",
+      "profileReference": ""
+    },
+    "shopperEmail": "",
+    "shopperLocale": "",
+    "shopperName": {
+      "firstName": "",
+      "lastName": ""
+    },
+    "shopperReference": "",
+    "shopperStatement": "",
+    "showRemovePaymentMethodButton": "",
+    "socialSecurityNumber": "",
+    "splitCardFundingSources": "",
+    "splits": [
+      {
+        "account": "",
+        "amount": {
+          "currency": "",
+          "value": ""
+        },
+        "description": "",
+        "reference": "",
+        "type": ""
+      }
+    ],
+    "store": "",
+    "storePaymentMethodMode": "",
+    "telephoneNumber": "",
+    "themeId": ""
+  }
+}

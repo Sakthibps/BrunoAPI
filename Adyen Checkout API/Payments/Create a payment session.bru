@@ -1,0 +1,284 @@
+meta {
+  name: Create a payment session
+  type: http
+  seq: 6
+}
+
+post {
+  url: {{baseUrl}}/sessions
+  body: json
+  auth: basic
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "accountInfo": {
+      "accountAgeIndicator": "",
+      "accountChangeDate": "",
+      "accountChangeIndicator": "",
+      "accountCreationDate": "",
+      "accountType": "",
+      "addCardAttemptsDay": "",
+      "deliveryAddressUsageDate": "",
+      "deliveryAddressUsageIndicator": "",
+      "homePhone": "",
+      "mobilePhone": "",
+      "passwordChangeDate": "",
+      "passwordChangeIndicator": "",
+      "pastTransactionsDay": "",
+      "pastTransactionsYear": "",
+      "paymentAccountAge": "",
+      "paymentAccountIndicator": "",
+      "purchasesLast6Months": "",
+      "suspiciousActivity": "",
+      "workPhone": ""
+    },
+    "additionalAmount": {
+      "currency": "",
+      "value": ""
+    },
+    "additionalData": {},
+    "allowedPaymentMethods": [],
+    "amount": {
+      "currency": "",
+      "value": ""
+    },
+    "applicationInfo": {
+      "adyenLibrary": {
+        "name": "",
+        "version": ""
+      },
+      "adyenPaymentSource": {
+        "name": "",
+        "version": ""
+      },
+      "externalPlatform": {
+        "integrator": "",
+        "name": "",
+        "version": ""
+      },
+      "merchantApplication": {
+        "name": "",
+        "version": ""
+      },
+      "merchantDevice": {
+        "os": "",
+        "osVersion": "",
+        "reference": ""
+      },
+      "shopperInteractionDevice": {
+        "locale": "",
+        "os": "",
+        "osVersion": ""
+      }
+    },
+    "authenticationData": {
+      "attemptAuthentication": "",
+      "authenticationOnly": "",
+      "threeDSRequestData": {
+        "challengeWindowSize": "",
+        "dataOnly": "",
+        "nativeThreeDS": "",
+        "threeDSVersion": ""
+      }
+    },
+    "billingAddress": {
+      "city": "",
+      "country": "",
+      "houseNumberOrName": "",
+      "postalCode": "",
+      "stateOrProvince": "",
+      "street": ""
+    },
+    "blockedPaymentMethods": [],
+    "captureDelayHours": "",
+    "channel": "",
+    "company": {
+      "homepage": "",
+      "name": "",
+      "registrationNumber": "",
+      "registryLocation": "",
+      "taxId": "",
+      "type": ""
+    },
+    "countryCode": "",
+    "dateOfBirth": "",
+    "deliverAt": "",
+    "deliveryAddress": {
+      "city": "",
+      "country": "",
+      "houseNumberOrName": "",
+      "postalCode": "",
+      "stateOrProvince": "",
+      "street": ""
+    },
+    "enableOneClick": "",
+    "enablePayOut": "",
+    "enableRecurring": "",
+    "expiresAt": "",
+    "fundOrigin": {
+      "billingAddress": {
+        "city": "",
+        "country": "",
+        "houseNumberOrName": "",
+        "postalCode": "",
+        "stateOrProvince": "",
+        "street": ""
+      },
+      "shopperName": {
+        "firstName": "",
+        "lastName": ""
+      }
+    },
+    "fundRecipient": {
+      "billingAddress": {
+        "city": "",
+        "country": "",
+        "houseNumberOrName": "",
+        "postalCode": "",
+        "stateOrProvince": "",
+        "street": ""
+      },
+      "paymentMethod": {
+        "brand": "",
+        "checkoutAttemptId": "",
+        "cupsecureplus.smscode": "",
+        "cvc": "",
+        "encryptedCardNumber": "",
+        "encryptedExpiryMonth": "",
+        "encryptedExpiryYear": "",
+        "encryptedSecurityCode": "",
+        "expiryMonth": "",
+        "expiryYear": "",
+        "fundingSource": "",
+        "holderName": "",
+        "networkPaymentReference": "",
+        "number": "",
+        "recurringDetailReference": "",
+        "shopperNotificationReference": "",
+        "storedPaymentMethodId": "",
+        "threeDS2SdkVersion": "",
+        "type": ""
+      },
+      "shopperEmail": "",
+      "shopperName": {
+        "firstName": "",
+        "lastName": ""
+      },
+      "shopperReference": "",
+      "storedPaymentMethodId": "",
+      "subMerchant": {
+        "city": "",
+        "country": "",
+        "mcc": "",
+        "name": "",
+        "taxId": ""
+      },
+      "telephoneNumber": "",
+      "walletIdentifier": "",
+      "walletOwnerTaxId": ""
+    },
+    "installmentOptions": {},
+    "lineItems": [
+      {
+        "amountExcludingTax": "",
+        "amountIncludingTax": "",
+        "brand": "",
+        "color": "",
+        "description": "",
+        "id": "",
+        "imageUrl": "",
+        "itemCategory": "",
+        "manufacturer": "",
+        "productUrl": "",
+        "quantity": "",
+        "receiverEmail": "",
+        "size": "",
+        "sku": "",
+        "taxAmount": "",
+        "taxPercentage": "",
+        "upc": ""
+      }
+    ],
+    "mandate": {
+      "amount": "",
+      "amountRule": "",
+      "billingAttemptsRule": "",
+      "billingDay": "",
+      "endsAt": "",
+      "frequency": "",
+      "remarks": "",
+      "startsAt": ""
+    },
+    "mcc": "",
+    "merchantAccount": "",
+    "merchantOrderReference": "",
+    "metadata": {},
+    "mpiData": {
+      "authenticationResponse": "",
+      "cavv": "",
+      "cavvAlgorithm": "",
+      "challengeCancel": "",
+      "directoryResponse": "",
+      "dsTransID": "",
+      "eci": "",
+      "riskScore": "",
+      "threeDSVersion": "",
+      "tokenAuthenticationVerificationValue": "",
+      "transStatusReason": "",
+      "xid": ""
+    },
+    "recurringExpiry": "",
+    "recurringFrequency": "",
+    "recurringProcessingModel": "",
+    "redirectFromIssuerMethod": "",
+    "redirectToIssuerMethod": "",
+    "reference": "",
+    "returnUrl": "",
+    "riskData": {
+      "clientData": "",
+      "customFields": {},
+      "fraudOffset": "",
+      "profileReference": ""
+    },
+    "shopperEmail": "",
+    "shopperIP": "",
+    "shopperInteraction": "",
+    "shopperLocale": "",
+    "shopperName": {
+      "firstName": "",
+      "lastName": ""
+    },
+    "shopperReference": "",
+    "shopperStatement": "",
+    "socialSecurityNumber": "",
+    "splitCardFundingSources": "",
+    "splits": [
+      {
+        "account": "",
+        "amount": {
+          "currency": "",
+          "value": ""
+        },
+        "description": "",
+        "reference": "",
+        "type": ""
+      }
+    ],
+    "store": "",
+    "storePaymentMethod": "",
+    "storePaymentMethodMode": "",
+    "telephoneNumber": "",
+    "threeDSAuthenticationOnly": "",
+    "trustedShopper": ""
+  }
+}

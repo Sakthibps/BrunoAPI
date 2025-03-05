@@ -1,0 +1,31 @@
+meta {
+  name: Cancel an authorised payment
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/payments/:paymentPspReference/cancels
+  body: json
+  auth: basic
+}
+
+params:path {
+  paymentPspReference: 
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "merchantAccount": "",
+    "reference": ""
+  }
+}

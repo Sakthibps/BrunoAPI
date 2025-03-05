@@ -1,0 +1,43 @@
+meta {
+  name: Get a list of available payment methods
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/paymentMethods
+  body: json
+  auth: basic
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "additionalData": {},
+    "allowedPaymentMethods": [],
+    "amount": {
+      "currency": "",
+      "value": ""
+    },
+    "blockedPaymentMethods": [],
+    "channel": "",
+    "countryCode": "",
+    "merchantAccount": "",
+    "order": {
+      "orderData": "",
+      "pspReference": ""
+    },
+    "shopperLocale": "",
+    "shopperReference": "",
+    "splitCardFundingSources": "",
+    "store": ""
+  }
+}

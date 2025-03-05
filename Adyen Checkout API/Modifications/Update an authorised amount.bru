@@ -1,0 +1,48 @@
+meta {
+  name: Update an authorised amount
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/payments/:paymentPspReference/amountUpdates
+  body: json
+  auth: basic
+}
+
+params:path {
+  paymentPspReference: 
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "amount": {
+      "currency": "",
+      "value": ""
+    },
+    "industryUsage": "",
+    "merchantAccount": "",
+    "reference": "",
+    "splits": [
+      {
+        "account": "",
+        "amount": {
+          "currency": "",
+          "value": ""
+        },
+        "description": "",
+        "reference": "",
+        "type": ""
+      }
+    ]
+  }
+}

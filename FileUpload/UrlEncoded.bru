@@ -1,0 +1,16 @@
+meta {
+  name: UrlEncoded
+  type: http
+  seq: 4
+}
+
+post {
+  url: https://postman-echo.com/post
+  body: formUrlEncoded
+  auth: none
+}
+
+body:form-urlencoded {
+  foo1: bar1
+  foo2: bar2
+}

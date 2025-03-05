@@ -1,0 +1,28 @@
+meta {
+  name: Get an Apple Pay session
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{baseUrl}}/applePay/sessions
+  body: json
+  auth: basic
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "displayName": "",
+    "domainName": "",
+    "merchantIdentifier": ""
+  }
+}

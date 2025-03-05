@@ -1,0 +1,25 @@
+meta {
+  name: Delete a token for stored payment details
+  type: http
+  seq: 2
+}
+
+delete {
+  url: {{baseUrl}}/storedPaymentMethods/:recurringId
+  body: none
+  auth: basic
+}
+
+params:query {
+  shopperReference: 
+  merchantAccount: 
+}
+
+params:path {
+  recurringId: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}

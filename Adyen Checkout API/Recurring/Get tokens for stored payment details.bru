@@ -1,0 +1,21 @@
+meta {
+  name: Get tokens for stored payment details
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{baseUrl}}/storedPaymentMethods
+  body: none
+  auth: basic
+}
+
+params:query {
+  ~shopperReference: 
+  ~merchantAccount: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}

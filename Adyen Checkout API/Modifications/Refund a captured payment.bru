@@ -1,0 +1,69 @@
+meta {
+  name: Refund a captured payment
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/payments/:paymentPspReference/refunds
+  body: json
+  auth: basic
+}
+
+params:path {
+  paymentPspReference: 
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "amount": {
+      "currency": "",
+      "value": ""
+    },
+    "lineItems": [
+      {
+        "amountExcludingTax": "",
+        "amountIncludingTax": "",
+        "brand": "",
+        "color": "",
+        "description": "",
+        "id": "",
+        "imageUrl": "",
+        "itemCategory": "",
+        "manufacturer": "",
+        "productUrl": "",
+        "quantity": "",
+        "receiverEmail": "",
+        "size": "",
+        "sku": "",
+        "taxAmount": "",
+        "taxPercentage": "",
+        "upc": ""
+      }
+    ],
+    "merchantAccount": "",
+    "merchantRefundReason": "",
+    "reference": "",
+    "splits": [
+      {
+        "account": "",
+        "amount": {
+          "currency": "",
+          "value": ""
+        },
+        "description": "",
+        "reference": "",
+        "type": ""
+      }
+    ]
+  }
+}

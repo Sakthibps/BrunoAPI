@@ -1,0 +1,20 @@
+meta {
+  name: Get a payment link
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{baseUrl}}/paymentLinks/:linkId
+  body: none
+  auth: basic
+}
+
+params:path {
+  linkId: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}

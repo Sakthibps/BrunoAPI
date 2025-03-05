@@ -1,0 +1,296 @@
+meta {
+  name: Get the balance of a gift card
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{baseUrl}}/paymentMethods/balance
+  body: json
+  auth: basic
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "accountInfo": {
+      "accountAgeIndicator": "",
+      "accountChangeDate": "",
+      "accountChangeIndicator": "",
+      "accountCreationDate": "",
+      "accountType": "",
+      "addCardAttemptsDay": "",
+      "deliveryAddressUsageDate": "",
+      "deliveryAddressUsageIndicator": "",
+      "homePhone": "",
+      "mobilePhone": "",
+      "passwordChangeDate": "",
+      "passwordChangeIndicator": "",
+      "pastTransactionsDay": "",
+      "pastTransactionsYear": "",
+      "paymentAccountAge": "",
+      "paymentAccountIndicator": "",
+      "purchasesLast6Months": "",
+      "suspiciousActivity": "",
+      "workPhone": ""
+    },
+    "additionalAmount": {
+      "currency": "",
+      "value": ""
+    },
+    "additionalData": {},
+    "amount": {
+      "currency": "",
+      "value": ""
+    },
+    "applicationInfo": {
+      "adyenLibrary": {
+        "name": "",
+        "version": ""
+      },
+      "adyenPaymentSource": {
+        "name": "",
+        "version": ""
+      },
+      "externalPlatform": {
+        "integrator": "",
+        "name": "",
+        "version": ""
+      },
+      "merchantApplication": {
+        "name": "",
+        "version": ""
+      },
+      "merchantDevice": {
+        "os": "",
+        "osVersion": "",
+        "reference": ""
+      },
+      "shopperInteractionDevice": {
+        "locale": "",
+        "os": "",
+        "osVersion": ""
+      }
+    },
+    "billingAddress": {
+      "city": "",
+      "country": "",
+      "houseNumberOrName": "",
+      "postalCode": "",
+      "stateOrProvince": "",
+      "street": ""
+    },
+    "browserInfo": {
+      "acceptHeader": "",
+      "colorDepth": "",
+      "javaEnabled": "",
+      "javaScriptEnabled": "",
+      "language": "",
+      "screenHeight": "",
+      "screenWidth": "",
+      "timeZoneOffset": "",
+      "userAgent": ""
+    },
+    "captureDelayHours": "",
+    "dateOfBirth": "",
+    "dccQuote": {
+      "account": "",
+      "accountType": "",
+      "baseAmount": {
+        "currency": "",
+        "value": ""
+      },
+      "basePoints": "",
+      "buy": {
+        "currency": "",
+        "value": ""
+      },
+      "interbank": {
+        "currency": "",
+        "value": ""
+      },
+      "reference": "",
+      "sell": {
+        "currency": "",
+        "value": ""
+      },
+      "signature": "",
+      "source": "",
+      "type": "",
+      "validTill": ""
+    },
+    "deliveryAddress": {
+      "city": "",
+      "country": "",
+      "houseNumberOrName": "",
+      "postalCode": "",
+      "stateOrProvince": "",
+      "street": ""
+    },
+    "deliveryDate": "",
+    "deviceFingerprint": "",
+    "fraudOffset": "",
+    "installments": {
+      "plan": "",
+      "value": ""
+    },
+    "localizedShopperStatement": {},
+    "mcc": "",
+    "merchantAccount": "",
+    "merchantOrderReference": "",
+    "merchantRiskIndicator": {
+      "addressMatch": "",
+      "deliveryAddressIndicator": "",
+      "deliveryEmail": "",
+      "deliveryEmailAddress": "",
+      "deliveryTimeframe": "",
+      "giftCardAmount": {
+        "currency": "",
+        "value": ""
+      },
+      "giftCardCount": "",
+      "giftCardCurr": "",
+      "preOrderDate": "",
+      "preOrderPurchase": "",
+      "preOrderPurchaseInd": "",
+      "reorderItems": "",
+      "reorderItemsInd": "",
+      "shipIndicator": ""
+    },
+    "metadata": {},
+    "orderReference": "",
+    "paymentMethod": {},
+    "recurring": {
+      "contract": "",
+      "recurringDetailName": "",
+      "recurringExpiry": "",
+      "recurringFrequency": "",
+      "tokenService": ""
+    },
+    "recurringProcessingModel": "",
+    "reference": "",
+    "selectedBrand": "",
+    "selectedRecurringDetailReference": "",
+    "sessionId": "",
+    "shopperEmail": "",
+    "shopperIP": "",
+    "shopperInteraction": "",
+    "shopperLocale": "",
+    "shopperName": {
+      "firstName": "",
+      "lastName": ""
+    },
+    "shopperReference": "",
+    "shopperStatement": "",
+    "socialSecurityNumber": "",
+    "splits": [
+      {
+        "account": "",
+        "amount": {
+          "currency": "",
+          "value": ""
+        },
+        "description": "",
+        "reference": "",
+        "type": ""
+      }
+    ],
+    "store": "",
+    "telephoneNumber": "",
+    "threeDS2RequestData": {
+      "acctInfo": {
+        "chAccAgeInd": "",
+        "chAccChange": "",
+        "chAccChangeInd": "",
+        "chAccPwChange": "",
+        "chAccPwChangeInd": "",
+        "chAccString": "",
+        "nbPurchaseAccount": "",
+        "paymentAccAge": "",
+        "paymentAccInd": "",
+        "provisionAttemptsDay": "",
+        "shipAddressUsage": "",
+        "shipAddressUsageInd": "",
+        "shipNameIndicator": "",
+        "suspiciousAccActivity": "",
+        "txnActivityDay": "",
+        "txnActivityYear": ""
+      },
+      "acctType": "",
+      "acquirerBIN": "",
+      "acquirerMerchantID": "",
+      "addrMatch": "",
+      "authenticationOnly": "",
+      "challengeIndicator": "",
+      "deviceChannel": "",
+      "deviceRenderOptions": {
+        "sdkInterface": "",
+        "sdkUiType": []
+      },
+      "homePhone": {
+        "cc": "",
+        "subscriber": ""
+      },
+      "mcc": "",
+      "merchantName": "",
+      "messageVersion": "",
+      "mobilePhone": {
+        "cc": "",
+        "subscriber": ""
+      },
+      "notificationURL": "",
+      "payTokenInd": "",
+      "paymentAuthenticationUseCase": "",
+      "purchaseInstalData": "",
+      "recurringExpiry": "",
+      "recurringFrequency": "",
+      "sdkAppID": "",
+      "sdkEncData": "",
+      "sdkEphemPubKey": {
+        "crv": "",
+        "kty": "",
+        "x": "",
+        "y": ""
+      },
+      "sdkMaxTimeout": "",
+      "sdkReferenceNumber": "",
+      "sdkTransID": "",
+      "sdkVersion": "",
+      "threeDSCompInd": "",
+      "threeDSRequestorAuthenticationInd": "",
+      "threeDSRequestorAuthenticationInfo": {
+        "threeDSReqAuthData": "",
+        "threeDSReqAuthMethod": "",
+        "threeDSReqAuthTimestamp": ""
+      },
+      "threeDSRequestorChallengeInd": "",
+      "threeDSRequestorID": "",
+      "threeDSRequestorName": "",
+      "threeDSRequestorPriorAuthenticationInfo": {
+        "threeDSReqPriorAuthData": "",
+        "threeDSReqPriorAuthMethod": "",
+        "threeDSReqPriorAuthTimestamp": "",
+        "threeDSReqPriorRef": ""
+      },
+      "threeDSRequestorURL": "",
+      "transType": "",
+      "transactionType": "",
+      "whiteListStatus": "",
+      "workPhone": {
+        "cc": "",
+        "subscriber": ""
+      }
+    },
+    "threeDSAuthenticationOnly": "",
+    "totalsGroup": "",
+    "trustedShopper": ""
+  }
+}

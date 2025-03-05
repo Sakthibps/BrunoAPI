@@ -1,0 +1,26 @@
+meta {
+  name: Create originKey values for domains
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/originKeys
+  body: json
+  auth: basic
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "originDomains": []
+  }
+}

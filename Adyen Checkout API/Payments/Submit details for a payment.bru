@@ -1,0 +1,49 @@
+meta {
+  name: Submit details for a payment
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/payments/details
+  body: json
+  auth: basic
+}
+
+headers {
+  ~Idempotency-Key: 
+}
+
+auth:basic {
+  username: {{username}}
+  password: {{password}}
+}
+
+body:json {
+  {
+    "authenticationData": {
+      "authenticationOnly": ""
+    },
+    "details": {
+      "MD": "",
+      "PaReq": "",
+      "PaRes": "",
+      "billingToken": "",
+      "cupsecureplus.smscode": "",
+      "facilitatorAccessToken": "",
+      "oneTimePasscode": "",
+      "orderID": "",
+      "payerID": "",
+      "payload": "",
+      "paymentID": "",
+      "paymentStatus": "",
+      "redirectResult": "",
+      "resultCode": "",
+      "threeDSResult": "",
+      "threeds2.challengeResult": "",
+      "threeds2.fingerprint": ""
+    },
+    "paymentData": "",
+    "threeDSAuthenticationOnly": ""
+  }
+}
