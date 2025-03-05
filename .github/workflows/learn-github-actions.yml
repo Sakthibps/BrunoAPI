@@ -24,11 +24,6 @@ jobs:
         with:
           node-version: '18' # Adjust Node version as needed
 
-      # Install Bruno CLI dependencies
-      - name: Install Dependencies
-        run: |
-          npm install
-
       # Run Bruno CLI tests with HTML reporting
       - name: Run Bruno Tests
         run: |
