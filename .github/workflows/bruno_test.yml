@@ -15,7 +15,7 @@ jobs:
 
     steps:
       # Checkout the repository
-      - name: Checkout Code
+      - name: Checkout Code from the repo
         uses: actions/checkout@v3
 
       # Setting up Node.js version
@@ -36,10 +36,9 @@ jobs:
 
       # Upload the html test report as an artifact
       - name: Upload Test Report in artifact location
-        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: Bruno Test Results
+          name: Bruno HTML Test Result
           path: ./HTMLReporter/Results.html
 
      
