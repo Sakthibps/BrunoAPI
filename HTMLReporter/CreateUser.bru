@@ -23,10 +23,6 @@ assert {
   res.body.job: eq leader
 }
 
-script:pre-request {
-  //This is a comment.
-}
-
 tests {
   test("status code test", function() {
     expect(res.getStatus()).to.equal(201);
