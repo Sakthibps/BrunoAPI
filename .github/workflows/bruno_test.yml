@@ -10,7 +10,7 @@ on:
 
 jobs:
   bruno-test:
-    name: Run Bruno CLI Tests
+    name: Execute Bruno CLI Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -18,29 +18,29 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Set up Node.js environment
+      # Setting up Node.js version
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # Adjust Node version as needed
+          node-version: '18' 
+          
+      # Install Bruno CLI
+      - name: Install Bruno CLI
+        run: npm install -g @usebruno/cli
 
       # Run Bruno CLI tests with HTML reporting
       - name: Run Bruno Tests
         run: |
           cd HTMLReporter
-          npx @usebruno/cli run --reporter-html ../HTMLReporter/Results.html
+          bru run --reporter-html ../HTMLReporter/Results.html
 
-      # Upload the test report as an artifact
-      - name: Upload Test Report
+      # Upload the html test report as an artifact
+      - name: Upload Test Report in artifact location
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: Bruno Test Results
           path: ./HTMLReporter/Results.html
 
-      # (Optional) Post-run: Summary output
-      - name: Display Test Run Summary
-        if: always()
-        run: echo "Bruno tests completed. HTML report is generated and uploaded as an artifact."
-
+     
      
