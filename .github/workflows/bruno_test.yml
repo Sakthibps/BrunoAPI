@@ -36,6 +36,7 @@ jobs:
 
       # Upload the html test report as an artifact
       - name: Upload Test Report in artifact location
+      # The below line will make this run, even if a previous step fails  
         if: always()
         uses: actions/upload-artifact@v4
         with:
