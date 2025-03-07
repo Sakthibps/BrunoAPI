@@ -19,12 +19,8 @@ body:json {
 
 assert {
   res.status: eq 201
-  res.body.name: eq morpheus
+  res.body.name: eq morpheus1
   res.body.job: eq leader
-}
-
-script:pre-request {
-  //This is a comment.
 }
 
 tests {
