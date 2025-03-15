@@ -25,3 +25,23 @@ body:graphql {
     }
   }
 }
+
+assert {
+  res.status: eq 200
+  res.body.data.country.name: eq India
+}
+
+tests {
+  test("status code test", function() {
+  expect(res.getStatus()).to.equal(200);
+  });
+  test("name data type test", function() {
+  expect(res.getBody().data.country.name).to.be.a('string');
+  });
+  test("name value test", function() {
+  expect(res.getBody().data.country.name).to.equal("India");
+  });
+  test("header value test", function() {
+  expect(res.getHeader("connection")).to.equal("keep-alive");
+  });
+}
