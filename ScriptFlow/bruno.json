@@ -1,0 +1,8 @@
+{
+  "version": "1",
+  "name": "ScriptFlow",
+  "type": "collection",		
+"scripts": {
+    "flow": "sequential"
+  }
+}

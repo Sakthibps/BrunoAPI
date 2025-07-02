@@ -1,0 +1,16 @@
+meta {
+  name: Folder1
+  seq: 2
+}
+
+auth {
+  mode: inherit
+}
+
+script:pre-request {
+  console.log('This is Folder Settings Pre Request Script');
+}
+
+script:post-response {
+  console.log('This is Folder Settings Post Response Script');
+}
