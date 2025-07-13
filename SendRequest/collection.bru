@@ -1,0 +1,25 @@
+script:pre-request {
+  let email = bru.getEnvVar("email");
+  let password = bru.getEnvVar("password");
+  
+  await bru.sendRequest({
+      method: 'POST',
+      url: 'https://airportgap.com/api/tokens',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      data: {
+         email: email,
+         password: password
+      },
+  }, function(err, res) {
+      if (err) {
+          console.error('Error:', err);
+          return;
+      }
+      console.log('Response:', res.data);
+      bru.setVar('tokenValue',res.data.token);
+  });
+  // This will give the bearer token value to all the requests in collection as a header
+     req.setHeader("Authorization", "Bearer {{tokenValue}}");
+}

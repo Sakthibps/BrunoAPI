@@ -44,6 +44,6 @@ tests {
     expect(res.statusText).to.equal("Created");
   });
   test("header value test", function() {
-    expect(res.getHeader("connection")).to.equal("close");
+    expect(res.getHeader("connection")).to.equal("keep-alive");
   });
 }
