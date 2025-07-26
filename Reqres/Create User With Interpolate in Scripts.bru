@@ -1,0 +1,23 @@
+meta {
+  name: Create User With Interpolate in Scripts
+  type: http
+  seq: 12
+}
+
+post {
+  url: https://reqres.in/api/users
+  body: none
+  auth: inherit
+}
+
+script:pre-request {
+  req.setHeader("content-type", "application/json");
+  
+  const firstName = bru.interpolate('{{$randomFirstName}}');
+  const jobTitle = bru.interpolate('{{$randomJobTitle}}');
+  
+  req.setBody({
+    name: firstName,
+    job: jobTitle
+  });
+}

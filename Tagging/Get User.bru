@@ -1,0 +1,29 @@
+meta {
+  name: Get User
+  type: http
+  seq: 3
+  tags: [
+    regression
+  ]
+}
+
+get {
+  url: https://reqres.in/api/users/2
+  body: none
+  auth: inherit
+}
+
+assert {
+  res.status: eq 200
+}
+
+tests {
+  test("status code test", function() {
+    expect(res.getStatus()).to.equal(200);
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}

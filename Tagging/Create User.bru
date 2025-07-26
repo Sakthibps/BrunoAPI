@@ -1,0 +1,42 @@
+meta {
+  name: Create User
+  type: http
+  seq: 1
+  tags: [
+    regression
+    smoke
+  ]
+}
+
+post {
+  url: https://reqres.in/api/users
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "name": "morpheus",
+      "job": "leader"
+  }
+}
+
+assert {
+  res.status: eq 201
+  res.body.name: eq morpheus
+}
+
+tests {
+  test("status code test", function() {
+    expect(res.getStatus()).to.equal(201);
+  });
+  
+  test("name value test", function() {
+    const data = res.getBody();
+    expect(data.name).to.equal("morpheus");
+  });
+}
+
+settings {
+  encodeUrl: true
+}
